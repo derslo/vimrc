@@ -1,5 +1,5 @@
 ## My personal vim 
 
-### On a fresh System follow these steps:
+### On a fresh System follow this step:
 
-1. Run the setup with `curl -Lks https://raw.githubusercontent.com/derslo/vimrc/master/vimsetup.sh | /bin/bash`
+`curl -Lks https://raw.githubusercontent.com/derslo/vimrc/master/vimsetup.sh | /bin/bash`
