@@ -1,7 +1,11 @@
+alias vimconfig='/usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME'
+
+echo "alias vimconfig='/usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME'" >> $HOME/.bashrc
+echo ".vimcfg" >> .gitignore
+
 git clone --bare https://github.com/derslo/vimrc.git $HOME/.vimcfg
-function vimconfig {
-   /usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME $@
-}
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
 mkdir -p .vimconfig-backup
 vimconfig checkout
 if [ $? = 0 ]; then
