@@ -26,3 +26,4 @@ if [ $? = 0 ]; then
 fi;
 
 vim +PluginInstall +qall
+reset
