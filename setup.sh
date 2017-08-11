@@ -6,7 +6,11 @@ echo ".vimcfg" >> .gitignore
 git clone --bare https://github.com/derslo/vimrc.git $HOME/.vimcfg
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
+mkdir .vim/colors
 mkdir -p .vimconfig-backup
+
+curl -Lks https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim >> .vim/colors/solarized.vim
+
 vimconfig checkout
 if [ $? = 0 ]; then
   echo "Checked out config.";
