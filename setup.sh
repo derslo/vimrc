@@ -1,5 +1,5 @@
 git clone --bare https://github.com/derslo/vimrc.git $HOME/.vimcfg
-function config {
+function vimconfig {
    /usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME $@
 }
 mkdir -p .vimconfig-backup
