@@ -11,12 +11,12 @@ mkdir -p .vimconfig-backup
 
 curl -Lks https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim >> .vim/colors/solarized.vim
 
-vimconfig checkout
+vimconfig checkout linux
 if [ $? = 0 ]; then
   echo "Checked out config.";
   else
     echo "Backing up pre-existing dot files.";
-    vimconfig checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .vimconfig-backup/{}
+    vimconfig checkout linux 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .vimconfig-backup/{}
 fi;
-vimconfig checkout
+vimconfig checkout linux
 vimconfig config status.showUntrackedFiles no
