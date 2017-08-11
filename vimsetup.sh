@@ -1,5 +1,3 @@
-alias vimconfig='/usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME'
-
 echo "alias vimconfig='/usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME'" >> $HOME/.bashrc
 echo ".vimcfg" >> .gitignore
 
