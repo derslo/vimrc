@@ -19,10 +19,10 @@ if [ $? = 0 ]; then
     /usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME checkout linux 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .vimconfig-backup/{}
   fi;
   /usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME checkout linux
-  /usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME config status.showUntrackedFiles no
+  /usr/bin/git --git-dir=$HOME/HOME.vimcfg/ --work-tree=$ config status.showUntrackedFiles no
 
   else
-  vimconfig pull origin linux
+  /usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME pull origin linux
 fi;
 
 vim +PluginInstall +qall
