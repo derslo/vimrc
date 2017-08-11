@@ -11,12 +11,14 @@ mkdir -p .vimconfig-backup
 
 curl -Lks https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim >> .vim/colors/solarized.vim
 
-vimconfig checkout linux
+/usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME checkout linux
 if [ $? = 0 ]; then
   echo "Checked out config.";
   else
     echo "Backing up pre-existing dot files.";
-    vimconfig checkout linux 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .vimconfig-backup/{}
+    /usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME checkout linux 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .vimconfig-backup/{}
 fi;
-vimconfig checkout linux
-vimconfig config status.showUntrackedFiles no
+/usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME checkout linux
+/usr/bin/git --git-dir=$HOME/.vimcfg/ --work-tree=$HOME config status.showUntrackedFiles no
+
+vim +PluginInstall +qall
