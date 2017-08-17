@@ -1,8 +1,3 @@
-nnoremap <Up> :echomsg "use k"<cr>
-nnoremap <Down> :echomsg "use j"<cr>
-nnoremap <Left> :echomsg "use h"<cr>
-nnoremap <Right> :echomsg "use l"<cr>
-
 syntax enable
 set background=dark
 colorscheme solarized
